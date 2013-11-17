@@ -1,0 +1,29 @@
+"5","How to modify whois contact details?","<pre><code>function modify(.......)
+{
+  $mcontact = file_get_contents( ""https://test.httpapi.com/api/contacts/modify.json?auth-userid=$uid&amp;auth-password=$pass&amp;contact-id=$cid&amp;name=$name &amp;company=$company&amp;email=$email&amp;address-line-1=$street&amp;city=$city&amp;country=$country&amp;zipcode=$pincode&amp;phone-cc=$countryCodeList[$phc]&amp;phone=$phone"" );
+
+  $mdetails = json_decode( $mcontact, true );
+
+  return $mdetails;
+}
+</code></pre>
+
+<p>using this modify function, displays warning mesage
+</p>
+
+<pre class=""lang-none prettyprint-override""><code>Warning: file_get_contents(https://...@hihfg.com&amp;address-line-1=3,dfgdf,fgdf&amp;city=dfgfd&amp;country=India&amp;zipcode=641005&amp;phone-cc=91&amp;phone=756657)
+  [function.file-get-contents]: failed to open stream: HTTP request failed!
+  HTTP/1.0 400 Bad request in /home/gfdgfd/public_html/new_one/customer/account/class.whois.php
+  on line 49
+</code></pre>
+
+<p>Please help me, modify contact details..</p>
+","php api file-get-contents"
+
+
+
+
+(Pdb) p X_train[4]
+'How to modify whois contact details? using this modify function, displays warning mesagePlease help me, modify contact details..'
+(Pdb) p codeSegments[4]
+['function modify(.......){  $mcontact = file_get_contents( "https://test.httpapi.com/api/contacts/modify.json?auth-userid=$uid', 'auth-password=$pass', 'contact-id=$cid', 'name=$name ', 'company=$company', 'email=$email', 'address-line-1=$street', 'city=$city', 'country=$country', 'zipcode=$pincode', 'phone-cc=$countryCodeList[$phc]', 'phone=$phone" );  $mdetails = json_decode( $mcontact, true );  return $mdetails;}', 'Warning: file_get_contents(https://...@hihfg.com', 'address-line-1=3,dfgdf,fgdf', 'city=dfgfd', 'country=India', 'zipcode=641005', 'phone-cc=91', 'phone=756657)   [function.file-get-contents]: failed to open stream: HTTP request failed!  HTTP/1.0 400 Bad request in /home/gfdgfd/public_html/new_one/customer/account/class.whois.php  on line 49']
